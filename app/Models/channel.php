@@ -10,6 +10,6 @@ class channel extends Model
     use HasFactory;
 
     public function videos() {
-        return $this->hasMany(video::class);
+        return $this->hasMany(Video::class);
     }
 }

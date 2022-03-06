@@ -10,10 +10,10 @@ class track extends Model
     use HasFactory;
 
     public function artist() {
-        return $this->belongsTo(artist::class);
+        return $this->belongsTo(Artist::class);
     }
 
     public function videos() {
-        return $this->belongsToMany(video::class);
+        return $this->belongsToMany(Video::class);
     }
 }

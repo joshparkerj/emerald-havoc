@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class artist extends Model
+class Artist extends Model
 {
     use HasFactory;
 
     public function tracks() {
-        return $this->hasMany(track::class);
+        return $this->hasMany(Track::class);
     }
 }

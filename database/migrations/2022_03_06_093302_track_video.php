@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Track;
+use App\Models\Video;
 
 return new class extends Migration
 {
@@ -13,10 +15,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('videos', function (Blueprint $table) {
+        //
+        Schema::create('track_video', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->timestamps();
+
+            $table->foreignIdFor(Track::class)->constrained();
+            $table->foreignIdFor(Video::class)->constrained();
         });
     }
 
@@ -27,6 +32,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('videos');
+        //
+        Schema::dropIfExists('track_video');
     }
 };

@@ -10,6 +10,6 @@ class commenter extends Model
     use HasFactory;
 
     public function videos() {
-        return $this->belongsToMany(video::class);
+        return $this->belongsToMany(Video::class);
     }
 }

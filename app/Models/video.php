@@ -10,14 +10,14 @@ class video extends Model
     use HasFactory;
 
     public function tracks() {
-        return $this->belongsToMany(track::class);
+        return $this->belongsToMany(Track::class);
     }
 
     public function commenters() {
-        return $this->belongsToMany(commenter::class);
+        return $this->belongsToMany(Commenter::class);
     }
 
     public function channel() {
-        return $this->belongsTo(channel::class);
+        return $this->belongsTo(Channel::class);
     }
 }
