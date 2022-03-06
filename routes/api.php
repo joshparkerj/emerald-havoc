@@ -3,6 +3,12 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\TrackController;
+use App\Http\Controllers\VideoController;
+use App\Http\Controllers\ChannelController;
+use App\Http\Controllers\CommenterController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +23,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::resources([
+    'artist' => ArtistController::class,
+    'track' => TrackController::class,
+    'video' => VideoController::class,
+    'channel' => ChannelController::class,
+    'commenter' => CommenterController::class,
+]);
