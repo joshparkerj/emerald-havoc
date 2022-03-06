@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class commenter extends Model
 {
     use HasFactory;
+
+    public function videos() {
+        return $this->belongsToMany(video::class);
+    }
 }

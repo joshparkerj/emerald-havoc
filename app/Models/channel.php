@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class channel extends Model
 {
     use HasFactory;
+
+    public function videos() {
+        return $this->hasMany(video::class);
+    }
 }
